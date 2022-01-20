@@ -1,0 +1,45 @@
+<ion-card class="borde">
+    <ion-card-header>
+    
+
+            <ion-card-title color="medium" class="ion-text-center">
+                Iniciar Sesión
+                
+            </ion-card-title>
+        
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label value="usuario" class="opacidad-media" position="floating">Correo Electrónico</ion-label>
+                        <ion-input type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label value="pass" class="opacidad-media" position="floating" >Contraseña</ion-label>
+                        <ion-input type="password"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>     
+            <ion-row>
+                <ion-col>
+                    <ion-button [routerLink]="'/home/pantalla1'" expand="block">
+                        Iniciar sesión
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="10" offset="1" class="ion-text-center">
+                    <ion-router-link [routerLink]="'../restablecer-contrasena'">
+                        Restablecer Contraseña
+                    </ion-router-link>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>
