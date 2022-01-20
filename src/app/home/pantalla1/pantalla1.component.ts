@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+
 
 @Component({
   selector: 'app-pantalla1',
@@ -7,8 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Pantalla1Component implements OnInit {
 
-  constructor() { }
+  foto: SafeResourceUrl
+  codigo: any;
 
-  ngOnInit() {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private scannerCodigo: BarcodeScanner
+  ) { }
+
+  ngOnInit() {
+    this.scannerCodigo.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+      this.codigo = barcodeData.text;
+    }).catch(err => {
+        console.log('Error', err);
+    });
+  }
+
+  async tomarFoto(){
+    const imagen = await Camera.getPhoto({
+      quality: 100,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    })
+  }
 
 }

@@ -24,6 +24,9 @@ import { Pantalla1Component } from './pantalla1/pantalla1.component';
     LoginAppComponent,
     RecuperaPassComponent,
     Pantalla1Component
+  ],
+  providers: [
+    
   ]
 })
 export class HomePageModule {}
