@@ -5,8 +5,10 @@ import { LoginAppComponent } from './login/login-app/login-app.component';
 import { LoginComponent } from './login/login.component';
 import { RecuperaPassComponent } from './login/recupera-pass/recupera-pass.component';
 import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-usuario.component';
+import { UsuarioComponent } from './modulos/usuario/usuario/usuario.component';
 import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.component';
 import { Pantalla1Component } from './pantalla1/pantalla1.component';
+import { DocenteComponent } from './pantalla2/docente/docente.component';
 import { Pantalla2Component } from './pantalla2/pantalla2.component';
 
 const routes: Routes = [
@@ -39,8 +41,16 @@ const routes: Routes = [
     component: PantallaUsuarioComponent
   },
   {
+    path: 'app-usuario',
+    component: UsuarioComponent
+  },
+  {
     path: 'app-scanner',
     component: AppScannerComponent
+  },
+  {
+    path: 'docente',
+    component: DocenteComponent
   }
 ];
 

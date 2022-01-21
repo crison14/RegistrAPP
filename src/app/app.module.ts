@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { MenuComponent } from './menu/menu.component';
-
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers } from '@ionic/storage';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,19 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    IonicStorageModule.forRoot({
+      name: 'RegistrAPP',
+      driverOrder: [
+        Drivers.IndexedDB,
+        Drivers.SecureStorage,
+        Drivers.LocalStorage
+      ]
+    })
   ],
   providers: [
+    HttpClient,
     BarcodeScanner,
     { 
       provide: RouteReuseStrategy, 

@@ -14,6 +14,8 @@ import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-us
 import { MenuComponent } from '../menu/menu.component';
 import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.component';
 import { BaseDatosService } from './servicios/base-datos.service';
+import { HttpHandler } from '@angular/common/http';
+import { DocenteComponent } from './pantalla2/docente/docente.component';
 
 
 @NgModule({
@@ -33,10 +35,12 @@ import { BaseDatosService } from './servicios/base-datos.service';
     Pantalla2Component,
     PantallaUsuarioComponent,
     MenuComponent,
-    AppScannerComponent
+    AppScannerComponent,
+    DocenteComponent
   ],
   providers: [
-    BaseDatosService
+    BaseDatosService,
+    Storage
   ]
 })
 export class HomePageModule {}

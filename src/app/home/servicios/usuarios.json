@@ -2,7 +2,7 @@
     {
         "id":1,
         "nombre": "Cristián",
-        "apeliido": "Rodríguez",
+        "apellido": "Rodríguez",
         "correo": "cris.rodrigueza@duocuc.cl",
         "tipo": "alumno",
         "contrasena": "1234"
@@ -10,7 +10,7 @@
     {
         "id":2,
         "nombre": "Sebastian",
-        "apeliido": "Rimmelin",
+        "apellido": "Rimmelin",
         "correo": "se.rimmelin@duocuc.cl",
         "tipo": "alumno",
         "contrasena": "1234"
@@ -18,7 +18,7 @@
     {
         "id":3,
         "nombre": "Ronald",
-        "apeliido": "Ulloa",
+        "apellido": "Ulloa",
         "correo": "ron.ulloa@duocuc.cl",
         "tipo": "alumno",
         "contrasena": "1234"
@@ -26,7 +26,7 @@
     {
         "id":4,
         "nombre": "Julio",
-        "apeliido": "Herrera",
+        "apellido": "Herrera",
         "correo": "ju.herrerau@profesor.duoc.cl",
         "tipo": "alumno",
         "contrasena": "1234"

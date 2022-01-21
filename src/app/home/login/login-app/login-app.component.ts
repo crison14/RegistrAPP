@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modulos/usuario/modelo/Usuario';
 import { BaseDatosService } from '../../servicios/base-datos.service';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login-app',
@@ -10,8 +10,24 @@ import { FormControl } from '@angular/forms';
 })
 export class LoginAppComponent implements OnInit {
 
-  email = new FormControl('');
+  
+  id = new FormControl('');
+  nombre = new FormControl('');
+  correo = new FormControl('');
   contrasena = new FormControl('');
+  apellido = new FormControl('');
+  tipo = new FormControl('');
+  
+
+  /* 
+  usuario = new FormGroup({
+    id: new FormControl(''),
+    nombre: new FormControl(''),
+    apellido: new FormControl(''),
+    correo: new FormControl(''),
+    tipo: new FormControl(''),
+    contrasena: new FormControl(''),
+  });*/
 
   private usuarios: Array<Usuario> = [];
   
@@ -20,12 +36,16 @@ export class LoginAppComponent implements OnInit {
   ) { }
 
   ngOnInit() {}
-    /* 
+    
+  /* 
   async iniciarSesion(){
     const usuarios = this.baseDatos.obtenerUsuarios()
-    .forEach(element => {
-      if ( = )
+    .forEach(usuarios => {
+      this.correo == this.baseDatos.obtenerUsuarios(correo)
     });
-  }*/
+  }
 
+  async iniciar(){
+    this.usuarios = await this.baseDatos.obtenerUsuarios();
+  }*/
 }

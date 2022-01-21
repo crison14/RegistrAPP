@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private handler: HttpHandler,
+    private cliente: HttpClient
+    ) { }
 
   ngOnInit() {}
 
