@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
+import { LoginAppComponent } from './login/login-app/login-app.component';
 import { LoginComponent } from './login/login.component';
 import { RecuperaPassComponent } from './login/recupera-pass/recupera-pass.component';
 import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-usuario.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'login-app',
-    component: LoginComponent,
+    component: LoginAppComponent,
   },
   {
     path: 'restablecer-contrasena',

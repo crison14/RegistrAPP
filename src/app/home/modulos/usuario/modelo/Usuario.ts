@@ -4,4 +4,5 @@ export class Usuario {
     apeliido: string;
     correo: string;
     tipo: string;
+    contraseña: string;
 }

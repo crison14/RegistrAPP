@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
@@ -13,6 +13,7 @@ import { Pantalla2Component } from './pantalla2/pantalla2.component';
 import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-usuario.component';
 import { MenuComponent } from '../menu/menu.component';
 import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.component';
+import { BaseDatosService } from './servicios/base-datos.service';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.compone
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     HomePage,
@@ -34,7 +36,7 @@ import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.compone
     AppScannerComponent
   ],
   providers: [
-    
+    BaseDatosService
   ]
 })
 export class HomePageModule {}
