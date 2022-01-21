@@ -9,6 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { LoginAppComponent } from './login/login-app/login-app.component';
 import { RecuperaPassComponent } from './login/recupera-pass/recupera-pass.component';
 import { Pantalla1Component } from './pantalla1/pantalla1.component';
+import { Pantalla2Component } from './pantalla2/pantalla2.component';
+import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-usuario.component';
+import { MenuComponent } from '../menu/menu.component';
+import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { Pantalla1Component } from './pantalla1/pantalla1.component';
     LoginComponent,
     LoginAppComponent,
     RecuperaPassComponent,
-    Pantalla1Component
+    Pantalla1Component,
+    Pantalla2Component,
+    PantallaUsuarioComponent,
+    MenuComponent,
+    AppScannerComponent
   ],
   providers: [
     

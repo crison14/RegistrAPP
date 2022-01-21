@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -16,17 +17,11 @@ export class Pantalla1Component implements OnInit {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private scannerCodigo: BarcodeScanner
+    private scannerCodigo: BarcodeScanner,
+    private mensaje: ToastController
   ) { }
 
-  ngOnInit() {
-    this.scannerCodigo.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
-      this.codigo = barcodeData.text;
-    }).catch(err => {
-        console.log('Error', err);
-    });
-  }
+  ngOnInit() {}
 
   async tomarFoto(){
     const imagen = await Camera.getPhoto({

@@ -1,0 +1,35 @@
+<ion-menu contentId="menuContenido" menuId="pizzaMenu" side="start" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Bienvenido {{ nombre }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item href="home/modulos/pantalla-usuario">
+        <ion-icon slot="start" name="add"></ion-icon>
+        <ion-label>Cuenta</ion-label>
+      </ion-item>
+      <ion-item href="home/pantalla1">
+        <ion-icon slot="start" name="add"></ion-icon>
+        <ion-label>Escanear</ion-label>
+      </ion-item>
+      <ion-item href="#">
+        <ion-icon slot="start" name="add"></ion-icon>
+        <ion-label>Acerca de...</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button [routerLink]="'/home/login'" (click)="cerrarSesion()" expand="block" color="danger">
+            Cerrar Sesión
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-footer>
+</ion-menu>
+<div id="menuContenido"></div>
