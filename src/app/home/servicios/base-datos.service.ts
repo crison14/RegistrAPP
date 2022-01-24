@@ -8,7 +8,7 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BaseDatosService {
-  private USUARIOS: string = '/home/servicios/usuarios.ts';
+  private USUARIOS: string = 'http://localhost:3000/usuarios';
   
 
   constructor(
