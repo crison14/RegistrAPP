@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../modulos/usuario/modelo/Usuario';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { iLogin } from './login.interface';
-import { iRespuesta } from './respuesta.interface';
+import { Task } from './task.interface';
+
 
 
 @Injectable({
@@ -27,6 +28,11 @@ export class BaseDatosService {
 
   public obtenerUsuarios(): Observable<Array<Usuario>> {
     return this.cliente.get<Array<Usuario>>(this.USUARIOS);
+  }
+
+  traerDatos(){
+    const path = 'http://localhost:3000/usuarios';
+    return this.cliente.get<Task[]>(path)
   }
 
   logueando(form:iLogin):Observable<iLogin>{
