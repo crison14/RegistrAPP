@@ -9,26 +9,18 @@
         
     </ion-card-header>
     <ion-card-content>
-        <ion-grid>
+        <form [formGroup]="loginForm" (submit)="capturarDatos(loginForm.value)">
+            <ion-item>
+                <ion-label value="email" class="opacidad-media" position="floating">Correo Electrónico</ion-label>
+                <ion-input formControlName="correo" type="text"></ion-input>
+            </ion-item>            
+            <ion-item>
+                <ion-label value="contrasena" class="opacidad-media" position="floating" >Contraseña</ion-label>
+                <ion-input formControlName="contrasena" type="password"></ion-input>
+            </ion-item>   
             <ion-row>
                 <ion-col>
-                    <ion-item>
-                        <ion-label value="email" class="opacidad-media" position="floating">Correo Electrónico</ion-label>
-                        <ion-input [formControl]="correo" type="text"></ion-input>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-item>
-                        <ion-label value="contrasena" class="opacidad-media" position="floating" >Contraseña</ion-label>
-                        <ion-input [formControl]="contrasena" type="password"></ion-input>
-                    </ion-item>
-                </ion-col>
-            </ion-row>     
-            <ion-row>
-                <ion-col>
-                    <ion-button [routerLink]="'/home/pantalla1'" expand="block">
+                    <ion-button (click)="loguear()" expand="block">
                         Iniciar sesión
                     </ion-button>
                 </ion-col>
@@ -47,6 +39,6 @@
                     </ion-router-link>
                 </ion-col>
             </ion-row>
-        </ion-grid>
+        </form>
     </ion-card-content>
 </ion-card>

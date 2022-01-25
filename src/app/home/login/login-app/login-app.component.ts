@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modulos/usuario/modelo/Usuario';
 import { BaseDatosService } from '../../servicios/base-datos.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { iLogin } from '../../servicios/login.interface';
+import { iRespuesta } from '../../servicios/respuesta.interface';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-app',
@@ -11,6 +15,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginAppComponent implements OnInit {
 
   
+  loginForm = new FormGroup({
+    correo : new FormControl('', Validators.required),
+    contrasena : new FormControl ('', Validators.required)
+  })
+/* 
   id = new FormControl('');
   nombre = new FormControl('');
   correo = new FormControl('');
@@ -19,7 +28,7 @@ export class LoginAppComponent implements OnInit {
   tipo = new FormControl('');
   
 
-  /* 
+  
   usuario = new FormGroup({
     id: new FormControl(''),
     nombre: new FormControl(''),
@@ -32,10 +41,27 @@ export class LoginAppComponent implements OnInit {
   private usuarios: Array<Usuario> = [];
   
   constructor(
-    private baseDatos: BaseDatosService
+    private baseDatos: BaseDatosService,
+    private router: Router,
+    private cliente: HttpClient
   ) { }
 
   ngOnInit() {}
+
+  loguear(form:iLogin){
+    this.baseDatos.logueando(form).subscribe(data => {
+      console.log(data)
+    })
+  }
+
+  public async capturarDatos(){
+    if(this.loginForm.valid === false){
+      alert('Complete los campos')
+      return;
+    }
+    console.log(this.loginForm.getRawValue());
+  }
+
     
   /* 
   async iniciarSesion(){
@@ -44,8 +70,6 @@ export class LoginAppComponent implements OnInit {
       this.correo == this.baseDatos.obtenerUsuarios(correo)
     });
   }
-
-  async iniciar(){
-    this.usuarios = await this.baseDatos.obtenerUsuarios();
-  }*/
+*/
+  
 }

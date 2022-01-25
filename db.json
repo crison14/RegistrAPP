@@ -1,35 +1,45 @@
 {
-  "usuarios":[{
-
-      "id":1,
+  "usuarios": [
+    {
+      "id": 1,
       "nombre": "Cristián",
       "apellido": "Rodríguez",
       "correo": "cris.rodrigueza@duocuc.cl",
       "tipo": "alumno",
-      "contrasena": "1234"
-  },
-  {
-      "id":2,
+      "contrasena": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": 2,
       "nombre": "Sebastian",
       "apellido": "Rimmelin",
       "correo": "se.rimmelin@duocuc.cl",
       "tipo": "alumno",
-      "contrasena": "1234"
-  },
-  {
-      "id":3,
+      "contrasena": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": 3,
       "nombre": "Ronald",
       "apellido": "Ulloa",
       "correo": "ron.ulloa@duocuc.cl",
       "tipo": "alumno",
-      "contrasena": "1234"
-  },
-  {
-      "id":4,
+      "contrasena": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": 4,
       "nombre": "Julio",
       "apellido": "Herrera",
       "correo": "ju.herrerau@profesor.duoc.cl",
-      "tipo": "alumno",
-      "contrasena": "1234"
-  }]
+      "tipo": "profesor",
+      "contrasena": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    }
+  ]
 }
