@@ -47,6 +47,7 @@ export class LoginAppComponent implements OnInit {
         return a.correo === this.loginForm.value.correo && a.contrasena === this.loginForm.value.contrasena;
 
       });
+
       if(usuario.tipo === 'alumno'){
         this.enviarToast();
         this.loginForm.reset();
