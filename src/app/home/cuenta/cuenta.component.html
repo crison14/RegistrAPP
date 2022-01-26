@@ -1,0 +1,24 @@
+<ion-card>
+  <ion-card-header>
+      <ion-card-title>
+          {{ item.titulo }}
+      </ion-card-title>
+      <ion-card-subtitle>
+          {{ item.subtitulo }}
+      </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+      {{ item.contenido }}
+  </ion-card-content>
+  <ion-card-content>
+      <ion-button color="success" *ngIf="item.estado; else EstadoEnFalso" (click)="item.estado = !item.estado">
+          Botón 1
+      </ion-button>
+      <ng-template #EstadoEnFalso>
+          <ion-button color="warning"  (click)="item.estado = !item.estado">
+              Botón 2
+          </ion-button>
+      </ng-template>
+      
+  </ion-card-content>
+</ion-card>

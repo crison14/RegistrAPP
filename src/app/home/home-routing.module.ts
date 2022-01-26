@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AcercaComponent } from './acerca/acerca.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
+import { AppCuentaComponent } from './cuenta/app-cuenta/app-cuenta.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 import { HomePage } from './home.page';
 import { LoginAppComponent } from './login/login-app/login-app.component';
 import { LoginComponent } from './login/login.component';
 import { RecuperaPassComponent } from './login/recupera-pass/recupera-pass.component';
-import { PantallaUsuarioComponent } from './modulos/pantalla-usuario/pantalla-usuario.component';
-import { UsuarioComponent } from './modulos/usuario/usuario/usuario.component';
 import { AppScannerComponent } from './pantalla1/app-scanner/app-scanner.component';
 import { Pantalla1Component } from './pantalla1/pantalla1.component';
 import { DocenteComponent } from './pantalla2/docente/docente.component';
@@ -37,20 +39,28 @@ const routes: Routes = [
     component: Pantalla2Component,
   },
   {
-    path: 'pantalla-usuario',
-    component: PantallaUsuarioComponent
-  },
-  {
-    path: 'app-usuario',
-    component: UsuarioComponent
-  },
-  {
     path: 'app-scanner',
     component: AppScannerComponent
   },
   {
     path: 'docente',
     component: DocenteComponent
+  },
+  {
+    path: 'alumnos',
+    component: AlumnosComponent
+  },
+  {
+    path: 'cuenta',
+    component: CuentaComponent
+  },
+  {
+    path: 'app-cuenta',
+    component: AppCuentaComponent
+  },
+  {
+    path: 'acerca',
+    component: AcercaComponent
   }
 ];
 

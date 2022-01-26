@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../../modulos/usuario/modelo/Usuario';
 import { BaseDatosService } from '../../servicios/base-datos.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -16,22 +16,27 @@ export class LoginAppComponent implements OnInit {
 
   public loginForm!: FormGroup;
 
-  private usuarios: Array<Usuario> = [];
-
-  public URL_USUARIOS: string = "https://api.jsonbin.io/b/61f0952bc37c95494354ec2d/1";
+  public URL_USUARIOS: string = "https://api.jsonbin.io/b/61f0952bc37c95494354ec2d/2";
   
   constructor(
     private baseDatos: BaseDatosService,
     private router: Router,
     private cliente: HttpClient,
     private fb: FormBuilder,
-    private storage: Storage
+    private storage: Storage,
+    private mensaje: ToastController
   ) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      correo: [''],
-      contrasena: ['']
+      correo: [
+        '', 
+        Validators.required,
+      ],
+      contrasena: [
+        '', 
+        Validators.required,
+      ]
     })
   }
   
@@ -39,20 +44,41 @@ export class LoginAppComponent implements OnInit {
     this.cliente.get<any>(this.URL_USUARIOS)
     .subscribe(res => {
       const usuario = res.find((a:any) => {
-        return a.correo === this.loginForm.value.correo && a.contrasena === this.loginForm.value.contrasena
+        return a.correo === this.loginForm.value.correo && a.contrasena === this.loginForm.value.contrasena;
+
       });
       if(usuario.tipo === 'alumno'){
-        alert("Bienvenido "+ usuario.nombre +". Accediste con exito!");
+        this.enviarToast();
         this.loginForm.reset();
         this.router.navigate(['/home/pantalla1']);
       }else if(usuario.tipo === 'profesor'){
-        alert("Bienvenido "+ usuario.nombre +". Accediste con exito!");
+        this.enviarToast();
         this.loginForm.reset();
         this.router.navigate(['/home/pantalla2'])
       }else{
-        alert("usuario no encontrado")
+        this.enviarToastError();
       }
+    },err => {
+      alert("ha ocurrido un error.")
     })
+  }
+
+  async enviarToast(){
+    const toast = await this.mensaje.create({
+      message: 'Inicio de sesión correcto' ,
+      duration: 2500,
+      position: "top"
+    });
+    await toast.present();
+  }
+
+  async enviarToastError(){
+    const toast = await this.mensaje.create({
+      message: 'El correo o contraseña que acabas de ingresar no existe. Por favor, revise sus datos e intente nuevamente' ,
+      duration: 2500,
+      position: "top"
+    });
+    await toast.present();
   }
 
   public async capturarDatos(){

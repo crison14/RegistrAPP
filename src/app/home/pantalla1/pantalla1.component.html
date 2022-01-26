@@ -1,5 +1,12 @@
+<ion-app>
+    <app-menu></app-menu>
+</ion-app>
+
 <ion-header>
     <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
         <ion-title>Registra tu Asistencia</ion-title>
     </ion-toolbar>
 </ion-header>
@@ -9,8 +16,14 @@
         <ion-row>
             <ion-col>
 
-                <h1>Registraste tu asistencia con Exito.</h1>
-                <h3>Ya puedes cerrar la Aplicación.</h3>
+                <ion-card>
+                    <ion-card-content>
+                      <h1>Registraste tu Asistencia</h1>
+                      <br>
+                      <h2>Tu asistencia se ha registrado con exito. Ya puedes salir de la aplicación</h2>
+                      
+                    </ion-card-content>
+                  </ion-card>
                 <app-app-scanner>
             
                 </app-app-scanner>
@@ -21,6 +34,4 @@
   
 </ion-content>
 
-<ion-app>
-    <app-menu></app-menu>
-</ion-app>
+<app-menu></app-menu>

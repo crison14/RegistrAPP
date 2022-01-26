@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { Observable } from 'rxjs';
-import { Usuario } from '../modulos/usuario/modelo/Usuario';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
-
+import { Usuarios } from '../modelo/Usuarios';
 
 
 
@@ -11,7 +10,7 @@ import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BaseDatosService {
-  private USUARIOS: string = 'https://jsonkeeper.com/b/AMYO';
+  private USUARIOS: string = 'https://api.jsonbin.io/b/61f0952bc37c95494354ec2d/2';
   
 
   constructor(
@@ -23,14 +22,14 @@ export class BaseDatosService {
 
   public async iniciar(){
     this.storage = await this.storage.create();
+    
   }
 
-  public obtenerUsuarios(): Observable<Array<Usuario>> {
-    return this.cliente.get<Array<Usuario>>(this.USUARIOS);
+  public obtenerUsuarios(): Observable<Array<Usuarios>> {
+    return this.cliente.get<Array<Usuarios>>(this.USUARIOS)
   }
 
-
-  entrar(usuario: any):Observable<any> {
-    return this.cliente.post(this.USUARIOS, usuario)
+  entrar(correo: any):Observable<any> {
+    return this.cliente.post(this.USUARIOS, correo)
   }
 }

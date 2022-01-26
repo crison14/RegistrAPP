@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PantallaUsuarioComponent } from './pantalla-usuario.component';
+import { AppCuentaComponent } from './app-cuenta.component';
 
-describe('PantallaUsuarioComponent', () => {
-  let component: PantallaUsuarioComponent;
-  let fixture: ComponentFixture<PantallaUsuarioComponent>;
+describe('AppCuentaComponent', () => {
+  let component: AppCuentaComponent;
+  let fixture: ComponentFixture<AppCuentaComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PantallaUsuarioComponent ],
+      declarations: [ AppCuentaComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PantallaUsuarioComponent);
+    fixture = TestBed.createComponent(AppCuentaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

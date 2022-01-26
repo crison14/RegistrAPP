@@ -31,4 +31,23 @@ export class Pantalla1Component implements OnInit {
     })
   }
 
+  escanear(){
+    console.log("escanear btn")
+  }
+
+  async abrirScanner(){
+  this.scannerCodigo.scan().then(barcodeData => {
+    console.log('Barcode data', barcodeData);
+    this.codigo = barcodeData.text;
+  }).catch(err => {
+      console.log('Error', err);
+  });
+  const toast = await this.mensaje.create({
+    message: "Se escaneó: " + this.codigo,
+    position: 'top',
+    duration: 2000
+  });
+  await toast.present();
+  }
+
 }

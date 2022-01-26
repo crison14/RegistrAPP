@@ -23,12 +23,23 @@ export class AppScannerComponent implements OnInit {
     }).catch(err => {
         console.log('Error', err);
     });
-    const toast = await this.mensaje.create({
-      message: "Se escaneó: " + this.codigo,
-      position: 'top',
-      duration: 2000
-    });
-    await toast.present();
+    if(this.codigo){
+      const toast = await this.mensaje.create({
+        message: "Se escaneó: " + this.codigo,
+        position: 'top',
+        duration: 2000
+      });
+      await toast.present();
+    }else{
+      const toast = await this.mensaje.create({
+        message: "No se escaneó nada.",
+        position: 'top',
+        duration: 2000
+      });
+      await toast.present();
+    }
+    
+    
   }
 
 }

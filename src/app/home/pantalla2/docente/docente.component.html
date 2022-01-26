@@ -1,21 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Generar Código QR para asistencia</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button (click)="mostrarQr = !mostrarQr" expand="block" >
-          Generar QR 
-        </ion-button>
+        <ion-item>
+          <ion-label>001D_Programación de Aplicaciones Móviles</ion-label>
+          <ion-button (click)="mostrarQr = !mostrarQr" expand="block" slot="end">
+            QR 
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>002D_Programación de Aplicaciones Móviles</ion-label>
+          <ion-button (click)="mostrarQr = !mostrarQr" expand="block" slot="end">
+            QR 
+          </ion-button>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="mostrarQr">
       <ion-col>
-        <img src="https://i.ibb.co/9yjQHFv/frame.png" alt="qr">
+        <ion-card>
+          <img src="https://i.ibb.co/9yjQHFv/frame.png" alt="qr">          
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
