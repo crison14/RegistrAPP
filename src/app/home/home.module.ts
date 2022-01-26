@@ -19,6 +19,7 @@ import { AlumnosComponent } from './alumnos/alumnos.component';
 import { AppCuentaComponent } from './cuenta/app-cuenta/app-cuenta.component';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { AcercaComponent } from './acerca/acerca.component';
+import { Menu2Component } from '../menu2/menu2.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AcercaComponent } from './acerca/acerca.component';
     Pantalla1Component,
     Pantalla2Component,
     MenuComponent,
+    Menu2Component,
     AppScannerComponent,
     DocenteComponent,
     AlumnosComponent,

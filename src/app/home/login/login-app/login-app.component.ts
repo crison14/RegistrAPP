@@ -47,16 +47,17 @@ export class LoginAppComponent implements OnInit {
         return a.correo === this.loginForm.value.correo && a.contrasena === this.loginForm.value.contrasena;
 
       });
-
-      if(usuario.tipo === 'alumno'){
-        this.enviarToast();
-        this.loginForm.reset();
-        this.router.navigate(['/home/pantalla1']);
-      }else if(usuario.tipo === 'profesor'){
-        this.enviarToast();
-        this.loginForm.reset();
-        this.router.navigate(['/home/pantalla2'])
-      }else{
+      try{
+        if(usuario.tipo === 'alumno'){
+          this.enviarToast();
+          this.loginForm.reset();
+          this.router.navigate(['/home/alumnos']);
+        }else if(usuario.tipo === 'profesor'){
+          this.enviarToast();
+          this.loginForm.reset();
+          this.router.navigate(['/home/pantalla2'])
+        }
+      }catch{
         this.enviarToastError();
       }
     },err => {

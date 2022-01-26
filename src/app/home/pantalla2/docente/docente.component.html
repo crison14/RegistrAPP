@@ -10,18 +10,29 @@
             QR 
           </ion-button>
         </ion-item>
-        <ion-item>
-          <ion-label>002D_Programación de Aplicaciones Móviles</ion-label>
-          <ion-button (click)="mostrarQr = !mostrarQr" expand="block" slot="end">
-            QR 
-          </ion-button>
-        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="mostrarQr">
       <ion-col>
         <ion-card>
-          <img src="https://i.ibb.co/9yjQHFv/frame.png" alt="qr">          
+          <img src="https://cdn.discordapp.com/attachments/895517203217154063/935744223850934352/qr-code_1.png" alt="qr">          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>002D_Programación de Aplicaciones Móviles</ion-label>
+          <ion-button (click)="mostrarQr2 = !mostrarQr2" expand="block" slot="end">
+            QR 
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="mostrarQr2">
+      <ion-col>
+        <ion-card>
+          <img src="https://cdn.discordapp.com/attachments/895517203217154063/935756794234560542/qr-code.png" alt="qr2">          
         </ion-card>
       </ion-col>
     </ion-row>

@@ -4,6 +4,9 @@
 
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
       <ion-title>Registra tu Asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,20 +15,29 @@
   <ion-grid>
       <ion-row>
           <ion-col>
-
-              <h1>Registraste tu asistencia con Exito.</h1>
-              <h3>Ya puedes cerrar la Aplicación.</h3>
+            
+            
+            
+            <app-pantalla1>
               
-              <ion-button [routerLink]="'pantalla1'" expand="block" color="danger">
-                Click me
-              </ion-button>
-
+            </app-pantalla1>
+            <app-app-scanner>
+              
+            </app-app-scanner>
+            
           </ion-col>
-      </ion-row>
-  </ion-grid>
+        </ion-row>
+      </ion-grid>
+      
+    </ion-content>
+    
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button href="home/alumnos" expand="block" color="success">
+          Registra tu Asistencia
+        </ion-button>
+    
+  </ion-toolbar>
+</ion-footer>
 
-</ion-content>
-
-<ion-app>
-  <app-menu></app-menu>
-</ion-app>
+<app-menu></app-menu>
